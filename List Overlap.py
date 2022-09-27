@@ -2,10 +2,25 @@
 
 import random
 
-"""The exercise gives us two lists"""
+"""We create two empty lists to be randomised"""
 
-a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+a_random = []
+b_random = []
+
+"""We randomise the range of each list, to make it wild"""
+
+rango1 = random.randint(30,80)
+rango2 = random.randint(80,120)
+rango3 = random.randint(20,60)
+rango4 = random.randint(60,99)
+
+"""We randomise every item in every random range in both lists"""
+
+def random_list(range1,range2,list):
+    for i in range(range1,range2):
+        n = random.randint(1,75)
+        list.append(n)
+    return list
 
 """We make another list to store the common values"""
 
@@ -22,5 +37,9 @@ def join_of_lists(list_a,list_b,list_c):
 
 """We run the function and print it"""
 
-join_of_lists(a,b,c)
-print(c)
+random_list(rango1,rango2,a_random)
+random_list(rango3,rango4,b_random)
+print(sorted(a_random))
+print(sorted(b_random))
+join_of_lists(a_random,b_random,c)
+print("\n", c)
