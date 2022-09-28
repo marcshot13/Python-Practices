@@ -1,15 +1,19 @@
 """We set a random number, then start a while loop that keeps running until the user input
 and the random number match, while printing either they are aiming lower or higher"""
 
+"""For the first extra, we added that only if the player exits, the game ends, otherwise it keeps playing"""
+
 import random
 random_number = random.randint(1,9)
 user_number = 0
 
 while random_number != user_number:
-    user_number = int(input("Enter a number between 1 and 9: \n"))
-    if random_number < user_number:
-        print("Too high!")
-    elif random_number > user_number:
+    user_number = input("Enter a number between 1 and 9, if you don't want to keep playing, type exit \n")
+    if user_number.lower() == "exit":
+        break
+    elif random_number > int(user_number):
         print("Too low!")
-    else:
+    elif random_number == int(user_number):
         print("Correct!")
+    if random_number < int(user_number):
+        print("Too high!")
