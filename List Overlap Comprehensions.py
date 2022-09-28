@@ -1,3 +1,4 @@
+import random
 """From what i read it cannot be made in 1 line, so ill do them as i could and the other way"""
 
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
@@ -14,3 +15,5 @@ for number in a:
         d.append(number)
 
 print(d)
+
+
